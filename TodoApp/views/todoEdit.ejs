@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Task - Todo App</title>
+  <link rel="icon" href="/static/todo_logo.png" type="image/png">
+  <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+<div class="todo-edit-container">
+  <h2 style="color: white;">Edit Task</h2>
+  <div class="todo">
+    <form action="/edit/<%= idTask %>" method="POST" class="todo-header">
+      <input type="text" name="content" value="<%= currentTask.content %>" required>
+      <button type="submit" id="submitBtn" class="confirm"><span class="fas fa-save"></span> Confirm</button>
+      <button type="button" class="cancel" onclick="goBack()"><span class="fas fa-times"></span> Cancel</button>
+    </form>
+    <a href="/" class="back-button"><span class="fas fa-arrow-left"></span> Back to List</a>
+  </div>
+</div>
+
+<script>
+function goBack() {
+  window.history.back(); // Returns to the previous page without making changes
+}
+</script>
+</body>
+</html>
